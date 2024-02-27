@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="box-login">
+        <div class="header">
+            <h1>Login</h1>
+            <h5>Sign in to continue</h5>
+        </div>
+        <div class="body">
+            <div class="container-body">
+                <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                    <div class="input-validator">
+                        <input type="email" nbInput formControlName="email" fullWidth status="basic"
+                            placeholder="Email">
+                        <div class="error-validate" *ngIf="formLogin.get('email')?.hasError('required') && submitted">
+                            Email is required
+                        </div>
+                        <div class="error-validate" *ngIf="formLogin.get('email')?.hasError('email') && submitted">
+                            Not is email
+                        </div>
+                    </div>
+
+                    <div class="input-validator">
+                        <input type="password" nbInput fullWidth formControlName="password" status="basic"
+                            placeholder="Password">
+                        <div class="error-validate"
+                            *ngIf="formLogin.get('password')?.hasError('required') && submitted">
+                            Password is required
+                        </div>
+                    </div>
+
+                    <div class="checkBoxBtn">
+                        <nb-checkbox formControlName="rememberClient" class="remember"
+                            status="danger">Remember</nb-checkbox>
+                        <button type="submit" nbButton hero status="danger">Login</button>
+                        <div class="error-login" *ngIf="showError">
+                            {{showError}}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

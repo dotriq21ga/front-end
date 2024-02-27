@@ -1,0 +1,19 @@
+<form [formGroup]="formCreatChannel" (ngSubmit)="onSubmit()">
+    <nb-card>
+        <nb-card-header>
+            <h3 style="text-align: center;">Create channel</h3>
+        </nb-card-header>
+        <nb-card-body>
+            <div class="input">
+                <input type="text" nbInput formControlName="name" fullWidth status="primary" placeholder="Name">
+            </div>
+            <div>
+                <textarea nbInput formControlName="description" fullWidth placeholder="Description"></textarea>
+            </div>
+        </nb-card-body>
+        <nb-card-footer style="display: flex;justify-content: space-between;">
+            <button nbButton status="danger" (click)="onClose()">CANCEL</button>
+            <button nbButton status="primary" type="submit">CREATE</button>
+        </nb-card-footer>
+    </nb-card>
+</form>

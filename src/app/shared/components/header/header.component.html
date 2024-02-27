@@ -1,0 +1,36 @@
+<div style="display: flex;justify-content: space-between;">
+    <div style="display: flex; align-items: center;">
+        <div style="display: flex;justify-content: space-between; ">
+            <p
+                style="color: white;font-size: 25px;font-weight: 900;text-shadow: 6px 2px 4px rgba(0, 0, 0, 0.5);width: 214.4px;text-align: center;margin-right: 20px;">
+                App Chat
+            </p>
+            <nb-form-field>
+                <nb-icon *ngIf="!isLoading" nbSuffix icon="search-outline" pack="eva"></nb-icon>
+                <nb-icon nbSuffix *ngIf="isLoading" class="spinner-inner" icon="loader-outline" pack="eva"></nb-icon>
+                <input type="text" [(ngModel)]="searchBar" (ngModelChange)="onChanged()" nbInput
+                    [nbAutocomplete]="auto">
+                <nb-autocomplete #auto>
+                    <nb-option *ngFor="let items of searchResults">
+                        <div style="display: flex;justify-content: space-between; width: 100%;"
+                            (click)="joinChannel(items)">
+                            <nb-user [name]="items.name" [title]="items.description"></nb-user>
+                            <div style="display: flex;align-items: center;padding: 0 10px;color: #ff3d71;">
+                                <nb-icon icon="arrow-forward-outline"></nb-icon>
+                            </div>
+                        </div>
+                    </nb-option>
+                </nb-autocomplete>
+            </nb-form-field>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center;">
+        <div style="display: flex;justify-content: space-between; margin-right:20px ;">
+            <button size="small" (click)="openDialog()" status="danger" nbButton>Create channel</button>
+        </div>
+        <div style="display: flex;align-items: center;">
+            <nb-user [nbContextMenu]="iteam" [picture]="getAvatar(user.avatar)" size="medium"
+                [showName]="false"></nb-user>
+        </div>
+    </div>
+</div>

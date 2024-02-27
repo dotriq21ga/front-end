@@ -1,0 +1,12 @@
+<div style="width: 100%;background-color: #ff3d71;text-align: right; padding: 5px 10px 0 0; ">
+    <nb-icon [nbTooltip]="getGroupMembershipInformation(channelContent)" status="control"
+        icon="question-mark-circle-outline"></nb-icon>
+</div>
+<nb-chat [title]="getTitle(channelContent)" status="danger" size="large">
+    <nb-chat-message *ngFor="let msg of channelContent?.message ; trackBy: trackByFn" [reply]="isReply(msg.userId)"
+        [message]="msg.content" [sender]="getName(msg.user)" [avatar]="getAvatar(msg.user?.avatar)">
+    </nb-chat-message>
+    <nb-chat-form messagePlaceholder="Enter message" (send)="sendMessage($event)" [dropFiles]="true">
+        <button nbButton ghost status="danger"><nb-icon icon="star"></nb-icon></button>
+    </nb-chat-form>
+</nb-chat>

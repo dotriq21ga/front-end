@@ -1,0 +1,65 @@
+.container {
+    width: 100%;
+    justify-content: center;
+}
+
+.header {
+    padding: 26px;
+    background-color: #1a237e;
+}
+
+.body mat-form-field {
+    width: 100%;
+}
+
+.body {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #b2bdf2;
+    position: relative;
+}
+
+.body>div {
+    width: 350px;
+}
+
+h1,
+h5 {
+    color: white;
+    text-align: center;
+}
+
+
+.checkBoxBtn {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+}
+
+.container-body>form>div {
+    padding: 15px 0;
+}
+
+.error-validate {
+    padding-top: 5px;
+    position: absolute;
+    width: 100%;
+    color: red;
+}
+
+.error-login {
+    position: absolute;
+    margin-top: 45px;
+    width: 100%;
+    color: red;
+}
+
+.input-validator {
+    position: relative;
+}

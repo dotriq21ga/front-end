@@ -1,0 +1,7 @@
+<nb-card size="large">
+    <nb-card-body>
+        <a *ngFor="let item of channelsMessage" (click)="channelSwitch(item.id)">
+            <nb-user style="padding: 5px 0;" [title]="getMessage(item)" size="medium" [name]="item.name"></nb-user>
+        </a>
+    </nb-card-body>
+</nb-card>
